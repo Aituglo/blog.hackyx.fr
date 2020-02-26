@@ -6,10 +6,11 @@ import config from "../../../content/meta/config";
 
 const Comments = props => {
   const { post, theme } = props;
+
   let disqusConfig = {
-    url: `${config.siteUrl+location.pathname}`,
-    identifier: post.id,
-    title: post.title,
+    url: `${config.siteUrl+post.fields.slug}`,
+    identifier: post.frontmatter.id,
+    title: post.frontmatter.title,
   }
 
   return (
